@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>   
+  <ion-buttons>
+  <ion-menu-button></ion-menu-button>
+  <ion-title>Decibel Meter</ion-title>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+  <img src="assets/images/sound_waves.png"/>
+  <div>
+    <h2 align="center" >
+      <font>Decibel Meter</font>
+    </h2>
+    <p>
+      <font>
+        De microfoon van het apparaat wordt gebruikt. De meting kan worden gestart met de knop "Start" onderaan en de knop "Stop" kan worden gestopt. Het aantal en het gemiddelde van de gegevens die tijdens het uitvoeren zijn gesampled, worden weergegeven.
+      </font>
+    </p>
+  </div>
+  <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
+    <h1 class="w3-xlarge" align="center">{{dbSzam}} dB</h1>
+  </div>
+  <br>
+  <div>
+   <!-- <p align="center" >
+      <font>Aantal gemeten gegevens</font>
+    </p>
+    <h1 align="center" >
+      <font>[ {{dbSzam}} ]</font>
+    </h1>
+    <p align = "center">
+      <font>Gemiddelde van gemeten gegevens </font>
+    </p>
+    <h1 align="center" >
+      <font> {{dbDB}} </font>
+    </h1>
+    <p align = "center">
+      <font>Minimum / Maximum </font>
+    </p>
+    <h1 align="center" >
+      <font>[ {{dbMin}} ]/[ {{dbMax}} ]</font>
+    </h1>-->
+    <ion-grid>
+      <ion-row>
+        <ion-col ion-item no-lines no-padding text-center col-2>{{dbMin}}</ion-col>
+        <ion-col ion-item no-lines no-padding text-center col-2>{{dbDB}}</ion-col>
+        <ion-col ion-item no-lines no-padding text-center col-2>{{dbMax}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col ion-item no-lines no-padding text-center col-2>Minimum</ion-col>
+        <ion-col ion-item no-lines no-padding text-center col-2>Average</ion-col>
+        <ion-col ion-item no-lines no-padding text-center col-2>Maximum</ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <h1>{{errMessage}}</h1>
+  </div>
+
+  <div >
+    <ion-button size="large" color="medium" style="float: left" (click) = "startMeter"><ion-icon slot="start" name="play"></ion-icon>START</ion-button>
+    <ion-button size="large" color="medium" style="align: center" (click) = "presentAlertPrompt()"><ion-icon slot="start" name="speedometer"></ion-icon>LEVELS</ion-button>
+    <ion-button size="large" color="medium" style="float: right" (click) = "stopMeter"><ion-icon slot="start" name="square"></ion-icon>STOP</ion-button>
+
+  </div>
+</ion-content>

@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-menu-button></ion-menu-button>
+      <ion-title>Alara Lukagro</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+
+  <img src="assets/images/AL2.jpg"/>
+  <br>
+  <p><strong>Alara Lukagro</strong></p>
+  <br>
+  <!--<p>Alara-Lukagro heeft een groot aanbod aan producten die geluid reduceren, voor klanten is het soms lastig om te weten welk product ze nodig hebben. Dus om het nu makkelijker te maken voor de klanten van Alara-Lukagro, is Alara-Lukagro op het idee gekomen om een applicatie te laten ontwerpen waarin de klanten van Alara-Lukagro doormiddel van een geluidopname kunnen bekijken hoeveel decibel geluid er momenteel is en hoeveel er valt te reduceren met behulp van de producten van Alara-Lukagro.
+  </p>-->
+  <ion-list>
+    <ion-item>
+      <ion-label>Select Language</ion-label>
+      <ion-select placeholder="Select One" [(ngModel)]="selectedLanguage" (ionChange)="languageChanged()">
+        <ion-select-option value="en">English</ion-select-option>
+        <ion-select-option value="nl">Nederlands</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  {{ 'HOME.text' | translate:params }}
+</ion-content>
