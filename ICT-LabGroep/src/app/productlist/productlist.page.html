@@ -1,0 +1,105 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-menu-button></ion-menu-button>
+      <ion-title><img class="title-image" alt="logo" height="80" src="/assets/images/logo.png" >Product List</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<!--<div class="titleicon">
+  <img src="assets/images/logo.png" width="150px" />
+</div>-->
+<ion-content padding>
+  <ion-button *ngIf="isAdmin" expand="block" routerLink="/addproduct" routerDirection="root">
+    &nbsp;Product Toevoegen
+  </ion-button>
+
+  <ion-card *ngFor="let item of products">
+    <span *ngIf="!item.isEdit; else elseBlock">
+      <ion-row>
+        <ion-col col-4></ion-col>
+        <ion-col col-4>
+          <img class="products" [src]='item.Image'/>
+        </ion-col>
+        <ion-col col-4></ion-col>
+      </ion-row>
+
+      <ion-card-header>
+        <!--<ion-card-title>{{item.Description}}</ion-card-title>-->
+        <ion-card-subtitle>ProductID: {{item.ProductId}}</ion-card-subtitle>
+        <ion-card-subtitle>Prijs: {{item.Price}}</ion-card-subtitle>
+        <ion-card-subtitle>Specification: {{item.Specification}}</ion-card-subtitle>
+        <ion-card-subtitle>Stock: {{item.Stock}}</ion-card-subtitle>
+        <ion-card-subtitle>Levertijd: {{item.Time}}</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+
+        <ion-button *ngIf="isAdmin" shape="round" color="secondary" size="small" (click)="EditRecord(item)">
+          <ion-icon size="small" slot="icon-only" name="create"></ion-icon>
+
+        </ion-button>
+        <ion-button *ngIf="isAdmin" shape="round" color="danger" size="small" (click)="RemoveRecord(item.id)">
+          <ion-icon size="small" slot="icon-only" name="trash"></ion-icon>
+
+        </ion-button>
+        <!--<ion-button  shape="round" slot= "end" color="danger" size="small" (click)="addToCart(item)">
+          <ion-icon size="small" slot="icon-only"  name="cart" ></ion-icon>
+
+        </ion-button>-->
+      </ion-card-content>
+    </span>
+    <ng-template #elseBlock>
+      <ion-card-header>
+        <ion-card-title>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                Edit
+              </ion-col>
+              <ion-col>
+                <ion-button fill="clear" color="medium" size="small" (click)="item.isEdit = false">
+                  Cancel
+                </ion-button>
+              </ion-col>
+              <ion-col>
+                <ion-button fill="outline" color="success" size="small" (click)="UpdateRecord(item)">
+                  Update
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label><strong>ProductId</strong></ion-label>
+          <ion-input type="text" [(ngModel)]="item.EditProdId"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label><strong>Price</strong></ion-label>
+          <ion-input type="text" [(ngModel)]="item.EditPrice"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label><strong>Description</strong></ion-label>
+          <ion-input type="text" [(ngModel)]="item.EditDescription"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label><strong>Specification</strong></ion-label>
+          <ion-input type="text" [(ngModel)]="item.EditSpecification"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label><strong>Time</strong></ion-label>
+          <ion-input type="text" [(ngModel)]="item.EditTime"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label><strong>Stock</strong></ion-label>
+          <ion-input type="text" [(ngModel)]="item.EditStock"></ion-input>
+        </ion-item>
+      </ion-card-content>
+    </ng-template>
+  </ion-card>
+
+
+
+</ion-content>

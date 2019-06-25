@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-menu-button></ion-menu-button>
+      <ion-title><img class="title-image" alt="logo" height="100" src="/assets/images/logo.png" >Product Toevoegen</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<!--<div class="titleicon">
+  <img class="product-image" src="assets/images/Xentry.jpg" />
+</div>-->
+
+<ion-content padding>
+  <img class="product" src="assets/images/studio.png" />
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input placeholder="Enter ProductID" [(ngModel)]="productnr"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input placeholder="Enter Price" [(ngModel)]="price"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input placeholder="Enter Description" [(ngModel)]="description"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input placeholder="Enter Specification" [(ngModel)]="specification"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input placeholder="Enter Time" [(ngModel)]="time"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input placeholder="Enter Stock" [(ngModel)]="stock"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input placeholder="Enter Image" [(ngModel)]="image"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+        <ion-button (click)="CreateRecord()" [disabled]="!productnr || !price || !description || !specification || !time || !stock">
+          <ion-icon size="small" slot="icon-only" name="add"></ion-icon>
+          &nbsp;Product Toevoegen
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -2,18 +2,20 @@
 	<ion-toolbar>
 	<ion-buttons>
       <ion-menu-button></ion-menu-button>
-		<ion-title>Log in</ion-title>
+		<ion-title><img class="title-image" alt="logo" height="80" src="/assets/images/logo.png" >Log in</ion-title>
 		</ion-buttons>
 	</ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content fullscreen style="--color: transparent; --background: url('../assets/images/wave.png') no-repeat center center fixed">
 	<form (ngSubmit)="login()" [formGroup]="loginForm">
 		<ion-list inset>
 
-			<ion-item [ngClass]="{ invalid: emailErrors.hasError('*', ['touched', 'dirty']) }">
+			<ion-item class= "input" [ngClass]="{ invalid: emailErrors.hasError('*', ['touched', 'dirty']) }">
 				<ion-input type="text" placeholder="Email" formControlName="email"></ion-input>
 			</ion-item>
+
+			<br>
 
 			<div ngxErrors="email" #emailErrors="ngxErrors">
 				<div [ngxError]="['email', 'required']" [when]="['touched', 'dirty']">It should be a valid email</div>
@@ -31,7 +33,7 @@
 		<div padding-horizontal>
 			<div class="form-error">{{loginError}}</div>
 
-			<ion-button full type="submit" [disabled]="!loginForm.valid">Log in</ion-button>
+			<ion-button expand="block" full type="submit" [disabled]="!loginForm.valid">Log in</ion-button>
 			<div class="login-footer">
 				<p>
 					<a href="#">Forgot password?</a>
@@ -39,9 +41,9 @@
 				</p>
 			</div>
 
-			<ion-list>
+			<ion-list class="list">
 
-			<ion-button ion-button icon-left block clear (click)="signup()">
+			<ion-button expand="block" full ion-button icon-left block clear (click)="signup()">
 					<ion-icon name="person-add"></ion-icon>
 					Sign up
 				</ion-button>
