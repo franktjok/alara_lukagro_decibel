@@ -7,7 +7,9 @@ const routes: Routes = [
   { path: 'decibel', loadChildren: './decibel/decibel.module#DecibelPageModule' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'signup', loadChildren: './signup/signup.module#SignupPageModule' },
-  { path: 'user', loadChildren: './user/user.module#UserPageModule'},
+  { path: 'user', loadChildren: './user/user.module#UserPageModule'},  { path: 'productlist', loadChildren: './productlist/productlist.module#ProductlistPageModule' },
+  { path: 'addproduct', loadChildren: './addproduct/addproduct.module#AddproductPageModule' },
+
 
 ];
 

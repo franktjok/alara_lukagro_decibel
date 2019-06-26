@@ -17,7 +17,7 @@ export class AppComponent {
   public appMenu = [
     {title: 'Home', url: '/home', icon: 'list'},
     {title: 'DecibelMeter', url: '/decibel', icon: 'speedometer'},
-    /**{title: 'Member', url: '/user', icon: 'contact'}**/
+    {title: 'Producten', url: '/productlist', icon: 'pricetags'}
 
   ]
   @ViewChild(NavController) nav: NavController;

@@ -24,17 +24,17 @@ export class DecibelPage {
     this.dbDB = 0;
     this.dbMin = 0;
     this.dbMax = 0;
+    this.dbErtek = [];
   }
    startMeter(){
 
        this.subscription = this.dbMeter.start().subscribe(
-       data => this.dbErtek
-       );
-       this.dbSzam = this.dbErtek.length;
-       this.dbDB = this.dbAVG(this.dbErtek);
-       this.dbMax =  Math.max.apply(null,this.dbErtek);
-       this.dbMin =  Math.min.apply(null,this.dbErtek);
-
+      data => this.dbErtek
+      );
+        this.dbSzam = this.dbErtek.length;
+        this.dbDB = this.dbAVG(this.dbErtek);
+        this.dbMax =  Math.max.apply(null,this.dbErtek[this.dbSzam]);
+        this.dbMin =  Math.min.apply(null,this.dbErtek[this.dbSzam]);
      }
 
    dbAVG(array){
